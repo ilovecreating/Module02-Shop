@@ -1,4 +1,60 @@
-$bg: #ff0;
-body {
-    background-color: $bg;
+$text: #27300f;
+$orange: #d26a22;
+$white: #fff;
+.header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        gap: 48px;
+    }
+    &__link {
+        font-family: Jost;
+        font-size: 16px;
+        color: $text;
+        text-decoration: none;
+        &:hover{
+            color: $orange;
+        }
+    }
+    &__tel{
+        font-size: 16px;
+        color: $text;
+        text-decoration: none;
+        &:hover{
+            color: $orange;
+        }
+    }
+    &__cart{
+        display: block;
+        background-image: url(../images/cart.png);
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        position: relative;
+        
+    }
+    &__counter{
+        font-size: 8px;
+        color: $white;
+        position: absolute;
+        right: 10px;
+        top: 7px;
+    }
+}
+.logo {
+    display: block;
+    background-image: url("../images/logo.png");
+    width: 120px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
