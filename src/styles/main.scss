@@ -1,9 +1,21 @@
-$text: #27300f;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,700;1,700&family=Jost:wght@400;500&display=swap");
+
+$green: #27300f;
 $orange: #d26a22;
 $white: #fff;
+
+$font-jost: "Jost", sans-serif;
+$font-cormorant: "Cormorant", serif;
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.6rem;
+    font-family: $font-jost;
+}
 .header {
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 4rem 0 auto;
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
@@ -14,47 +26,56 @@ $white: #fff;
         list-style-type: none;
         margin: 0;
         padding-left: 0;
-        gap: 48px;
+        gap: 4.8rem;
     }
     &__link {
         font-family: Jost;
-        font-size: 16px;
-        color: $text;
+        font-size: 1.6rem;
+        color: $green;
         text-decoration: none;
-        &:hover{
+        &:hover {
             color: $orange;
         }
     }
-    &__tel{
-        font-size: 16px;
-        color: $text;
+    &__tel {
+        font-size: 1.6rem;
+        color: $green ;
         text-decoration: none;
-        &:hover{
+        font-weight: 500;
+        &:hover {
             color: $orange;
         }
     }
-    &__cart{
+    &__cart {
         display: block;
         background-image: url(../images/cart.png);
-        width: 40px;
-        height: 40px;
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+        background-color: $orange;
         background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 1.7rem 1.5rem;
         position: relative;
-        
+        border:1px solid $orange;
+        &:hover {
+            background-color: $green;
+            border:1px solid $green;
+        }
     }
-    &__counter{
-        font-size: 8px;
+    &__counter {
+        font-size: 0.8rem;
         color: $white;
         position: absolute;
-        right: 10px;
-        top: 7px;
+        right: 1rem;
+        top: 0.7rem;
     }
 }
 .logo {
     display: block;
     background-image: url("../images/logo.png");
-    width: 120px;
-    height: 32px;
+    width: 12rem;
+    height: 3.2rem;
     background-repeat: no-repeat;
     background-size: cover;
 }
