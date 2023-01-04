@@ -10,14 +10,14 @@ html {
     font-size: 10px;
 }
 body {
+    color: $green;
     font-size: 1.6rem;
     font-family: $font-jost;
 }
 .header {
     max-width: 1440px;
-    margin: 4rem 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 0 auto 6rem;
+    padding: 4rem 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +30,7 @@ body {
     }
     &__link {
         font-family: Jost;
-        font-size: 1.6rem;
+
         color: $green;
         text-decoration: none;
         &:hover {
@@ -38,8 +38,7 @@ body {
         }
     }
     &__tel {
-        font-size: 1.6rem;
-        color: $green ;
+        color: $green;
         text-decoration: none;
         font-weight: 500;
         &:hover {
@@ -57,10 +56,10 @@ body {
         background-position: center center;
         background-size: 1.7rem 1.5rem;
         position: relative;
-        border:1px solid $orange;
+        border: 1px solid $orange;
         &:hover {
             background-color: $green;
-            border:1px solid $green;
+            border: 1px solid $green;
         }
     }
     &__counter {
@@ -78,4 +77,167 @@ body {
     height: 3.2rem;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.container {
+    max-width: 1440px;
+    margin: 4rem 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.main {
+    background-image: url(../images/main.png);
+    background-size: cover;
+    background-position-x: center;
+    position: relative;
+    padding-bottom: 187px;
+    &__item {
+        margin-left: 12rem;
+        max-width: 378px;
+        margin-top: 6rem;
+    }
+    &__link {
+        margin-top: 6rem;
+    }
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__cover {
+        flex-basis: 763px;
+        height: 763px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    &__line {
+        width: 658px;
+        height: 658px;
+        border: 1px solid rgba($green, 0.4);
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 92%;
+    }
+    &__btn {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        position: absolute;
+        text-align: left;
+        color: $green;
+        
+        &:hover {
+            &::before {
+                background-color: $orange;
+                box-shadow: 0 0 0 4px $white, 0 0 0 5px $orange;
+            }
+        }
+        &::before {
+            content: "";
+            background-color: $green;
+            width: 11px;
+            height: 11px;
+            box-shadow: 0 0 0 4px $white, 0 0 0 5px $green;
+            border-radius: 100%;
+            position: absolute;
+        }
+        &_1 {
+            top: 94px;
+            left: 25px;
+            &::before {
+                bottom: 8px;
+                right: -24px;
+            }
+        }
+        &_2 {
+            top: 200px;
+            right: 3px;
+            &::before {
+                top: 14px;
+                left: -25px;
+            }
+        }
+        &_3 {
+            bottom: -22px;
+            right: 199px;
+            &::before {
+                top: -19px;
+                right: 31px;
+            }
+        }
+    }
+    &__food {
+        display: block;
+        color: rgba($green, 0.8);
+    }
+    &__tomato {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 11rem;
+    }
+    &__avocado {
+        position: absolute;
+        top: 43px;
+        right: -200px;
+        width: 17,8rem;
+    }
+    &__cucumber {
+        position: absolute;
+        top: 0;
+        left: 530px;
+        width: 9,1rem;
+    }
+    &__pepper {
+        position: absolute;
+        top: 370px;
+        left: -200px;
+        width: 8.5rem;
+    }
+    &__grushas {
+        position: absolute;
+        top: 770px;
+        left: -200px;
+        width: 10,6rem;
+    }
+}
+.title {
+    margin: 0;
+    font-family: $font-cormorant;
+    font-weight: 700;
+    font-size: 8rem;
+    &__span {
+        font-style: italic;
+    }
+    &_block {
+        .title__span {
+            display: block;
+        }
+    }
+}
+.description {
+    margin: 0;
+    &_size-s {
+        font-size: 1.8rem;
+    }
+}
+.link {
+    color: white;
+    text-transform: uppercase;
+    padding: 2.5rem 4.2rem;
+    background-color: $orange;
+    box-shadow: 0px 1rem 1.1rem 0.2rem rgba(207, 92, 13, 0.2);
+    text-decoration: none;
+    border-radius: 3.8rem;
+    display: inline-block;
 }
