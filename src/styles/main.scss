@@ -91,9 +91,10 @@ body {
     background-image: url(../images/main.png);
     background-size: cover;
     background-position-x: center;
+    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 187px;
-    z-index:0;
+    z-index: 0;
     &__item {
         margin-left: 12rem;
         max-width: 378px;
@@ -194,7 +195,7 @@ body {
     }
     &__avocado {
         position: absolute;
-z-index:-1;
+        z-index: -1;
         top: 34px;
         right: 0px;
         width: 17, 8rem;
@@ -224,11 +225,17 @@ z-index:-1;
     font-size: 8rem;
     line-height: 1;
     margin: 0;
-    margin-bottom: 63px;
+
     &__span {
         font-style: italic;
     }
-    &_block {
+    &_block-a {
+        margin-bottom: 63px;
+        .title__span {
+            display: block;
+        }
+    }
+    &_block-b {
         .title__span {
             display: block;
         }
@@ -239,6 +246,9 @@ z-index:-1;
     line-height: 1.5;
     &_size-s {
         font-size: 1.8rem;
+    }
+    &_size-m {
+        font-size: 2.4rem;
     }
 }
 .link {
@@ -251,4 +261,137 @@ z-index:-1;
     border-radius: 3.8rem;
     display: inline-block;
     letter-spacing: 0.13rem;
+}
+.offer {
+    background-image: url(../images/offer.png);
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    padding-top: 2rem;
+    padding-bottom: 12.8rem;
+    &__text {
+        margin-top: 6rem;
+        max-width: 700px;
+    }
+    &__slider {
+        overflow: hidden;
+        padding-top: 100px;
+    }
+}
+.swiper {
+    overflow: initial;
+    &-slide {
+        border: 1px solid rgba($green, 0.4);
+        height: 520px;
+        padding: 4.4rem 3.9rem;
+        box-sizing: border-box;
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 0;
+        
+        &:hover {
+            box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
+            .swiper-slide__hover {
+                height: 233px;
+                opacity: 1;
+            }
+            &::after{
+                content: '';
+                background-color: rgba($white, .55);
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                border-radius: 2rem;
+                z-index: -1;
+            }
+        }
+        &_milk{
+            background-image: url(../images/milk.png);
+           
+        }
+        &_pasta{
+            background-image: url(../images/pasta.png);
+           
+        }
+        &_steaks{
+            background-image: url(../images/steaks.png);
+           
+        }
+        
+        &__title {
+            font-family: $font-cormorant;
+            font-size: 3rem;
+            font-weight: 700;
+            color: $green;
+            margin-bottom: 0;
+        }
+        &__hover {
+            height: 0;
+            opacity: 0;
+        }
+        &__text {
+            color: rgba($green, 0.4);
+            line-height: 1.5;
+            margin-top: 2.5rem;
+            margin-bottom: 3.4rem;
+            max-width: 263px;
+        }
+        &__link {
+            text-transform: uppercase;
+            color: $green;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0.8;
+            letter-spacing: 0.1rem;
+            &:hover {
+                opacity: 1;
+            }
+            &::before {
+                content: "";
+                display: block;
+                background-image: url(../images/plus.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
+    &-pagination {
+        display: none;
+    }
+    &-button-next,
+    &-button-prev {
+        top: -64px;
+        &:hover {
+            &::after {
+                color: rgba($green, 1);
+            }
+        }
+        &::after {
+            content: "prev";
+            color: rgba($green, 0.4);
+            font-size: 20px;
+        }
+    }
+    &-button-prev {
+        left: initial;
+        right: 70px;
+    }
+    &-button-next {
+        &::after {
+            content: "next";
+        }
+        right: -9px;
+    }
 }
