@@ -192,6 +192,7 @@ body {
         bottom: 116px;
         right: 126px;
         width: 11rem;
+        z-index: -1;
     }
     &__avocado {
         position: absolute;
@@ -199,24 +200,28 @@ body {
         top: 34px;
         right: 0px;
         width: 17, 8rem;
+        z-index: -1;
     }
     &__cucumber {
         position: absolute;
         top: -8px;
         left: 692px;
         width: 9, 1rem;
+        z-index: -1;
     }
     &__pepper {
         position: absolute;
         top: 389px;
         left: 39px;
         width: 8.5rem;
+        z-index: -1;
     }
     &__grushas {
         position: absolute;
         top: 787px;
         left: 0px;
         width: 10, 6rem;
+        z-index: -1;
     }
 }
 .title {
@@ -239,6 +244,15 @@ body {
         .title__span {
             display: block;
         }
+    }
+    &_block-c {
+        margin-left: 1rem;
+        .title__span {
+            display: block;
+        }
+    }
+    &_block-d {
+        margin-top: 175px;
     }
 }
 .description {
@@ -268,15 +282,15 @@ body {
     background-position-x: center;
     background-repeat: no-repeat;
     padding-top: 2rem;
-    padding-bottom: 12.8rem;
+    padding-bottom: 16rem;
     &__text {
         margin-top: 6rem;
         max-width: 700px;
     }
-    &__slider {
-        overflow: hidden;
-        padding-top: 100px;
-    }
+}
+.slider {
+    overflow: hidden;
+    padding-top: 100px;
 }
 .swiper {
     overflow: initial;
@@ -288,43 +302,44 @@ body {
         border-radius: 2rem;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: space-between;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
         z-index: 0;
-        
+        &_white {
+            justify-content: flex-end;
+            &:hover {
+                .swiper-slide__hover {
+                    height: 233px;
+                    opacity: 1;
+                }
+                &::after {
+                    content: "";
+                    background-color: rgba($white, 0.55);
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    border-radius: 2rem;
+                    z-index: -1;
+                }
+            }
+        }
         &:hover {
             box-shadow: 0 0 0 2px rgba($green, 0.4) inset;
-            .swiper-slide__hover {
-                height: 233px;
-                opacity: 1;
-            }
-            &::after{
-                content: '';
-                background-color: rgba($white, .55);
-                width: calc(100% - 4px);
-                height: calc(100% - 4px);
-                position: absolute;
-                top: 2px;
-                left: 2px;
-                border-radius: 2rem;
-                z-index: -1;
-            }
         }
-        &_milk{
+        &_milk {
             background-image: url(../images/milk.png);
-           
         }
-        &_pasta{
+        &_pasta {
             background-image: url(../images/pasta.png);
-           
         }
-        &_steaks{
+        &_steaks {
             background-image: url(../images/steaks.png);
-           
         }
-        
+
         &__title {
             font-family: $font-cormorant;
             font-size: 3rem;
@@ -366,6 +381,24 @@ body {
                 height: 3rem;
             }
         }
+        &__cover{
+            position: relative;
+            width: 100%;
+            height: 293px;
+            overflow: hidden;
+            text-align: center;
+        }
+        &__image{
+            height: 100%;
+        }
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &-slide_extra{
+        height: 685px;
     }
     &-pagination {
         display: none;
@@ -393,5 +426,105 @@ body {
             content: "next";
         }
         right: -9px;
+    }
+}
+.trends{
+    &__text{
+        margin-top: 38px;
+    }
+}
+.counter {
+    display: flex;
+    &__btn {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $green;
+        background-position: center center;
+        border-radius: 100%;
+    }
+    &__minus{
+        pointer-events: none;
+        border: 1px solid $green; 
+        background-color: transparent;
+        padding: 0;
+        background-image: url(../images/minus-сounter.svg);
+        background-size: 14px 24px;
+        background-repeat: no-repeat;
+        opacity: .4;
+    }
+    &__plus{
+        pointer-events: none; 
+        background-color: transparent;
+        padding: 0;
+        background-image: url(../images/plus-сounter.svg);
+        background-size: 14px 24px;
+        background-repeat: no-repeat; 
+    }
+    &__input{
+        text-align: center;
+        width: 46px;
+        font-size: 2.4rem;
+        border: none;
+        padding: 0;
+    }
+}
+.about {
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_block-b {
+    }
+    &__text {
+        max-width: 620px;
+        margin-left: 12rem;
+        margin-top: 4.4rem;
+    }
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: 9rem;
+        text-align: center;
+    }
+    &__item-a,
+    &__item-b,
+    &__item-c {
+        font-family: $font-cormorant;
+        font-size: 3rem;
+        font-weight: 700;
+        font-style: italic;
+        color: $green;
+        margin-top: 4.8rem;
+        &::before {
+            content: "";
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            width: 87px;
+            height: 87px;
+            display: block;
+        }
+    }
+    &__item-a {
+        &::before {
+            background-image: url(../images/health.png);
+            position: relative;
+            right: -12px;
+        }
+    }
+    &__item-b {
+        &::before {
+            background-image: url(../images/traditions.png);
+            position: relative;
+            right: -12px;
+        }
+    }
+    &__item-c {
+        &::before {
+            background-image: url(../images/taste.png);
+        }
     }
 }
